@@ -61,4 +61,228 @@ body, html{
 
 
 
+*{
+    box-sizing: border-box;
+}
+body, html{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.grid-container1{
+    padding: 10px;
+    height: 100vh;
+    background-color:rgb(235, 164, 229) ;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:repeat(3, 1fr);
+    gap:10px;
+
+    grid-template-areas: 
+    "header header header header"
+    "squ squ rec rec"
+    "squ squ . ."
+    ;
+
+}
+
+.grid-item1:nth-child(1){
+    background-color: #ffc6c4;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item1:nth-child(2){
+    background-color:#b2d8d8;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item1:nth-child(3){
+    background-color: #c7e5c5;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item1:nth-child(4){
+    background-color: #fff1b5;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item1:nth-child(5){
+    background-color:  #d4bfff;
+    padding: 10px;
+    /* margin: 10px; */
+}
+
+#grid-header{
+    grid-area: header;
+}
+
+#grid-square{
+    grid-area: squ;
+}
+
+#grid-rec{
+    grid-area: rec;
+}
+
+.grid-container2{
+    padding: 10px;
+    height: 100vh;
+    background-color:rgb(235, 164, 229) ;
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows:repeat(9, 1fr);
+    gap:10px;
+
+    grid-template-areas: 
+    "mit1 mit1 mit1 mit2 mit2 mit2 "
+    "mit1 mit1 mit1 mit2 mit2 mit2 "
+    "recmini recmini recmega recmega recmega recmega "
+    "recmini recmini recmega recmega recmega recmega "
+    "recmini recmini recmega recmega recmega recmega "
+    "footer footer footer footer footer footer "
+   
+    ;
+
+}
+
+.grid-item2:nth-child(1){
+    background-color: #ffc6c4;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item2:nth-child(2){
+    background-color:#b2d8d8;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item2:nth-child(3){
+    background-color: #c7e5c5;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item2:nth-child(4){
+    background-color: #fff1b5;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item2:nth-child(5){
+    background-color:  #d4bfff;
+    padding: 10px;
+    /* margin: 10px; */
+}
+
+#grid-footer{
+    grid-area: footer;
+}
+
+#grid-mit1{
+    grid-area: mit1;
+}
+
+#grid-mit2{
+    grid-area: mit2;
+}
+#grid-recmega{
+    grid-area: recmega;
+}
+#grid-recmini{
+    grid-area: recmini;
+}
+
+
+.grid-container3{
+    padding: 10px;
+    height: 100vh;
+    background-color:rgb(235, 164, 229) ;
+    display:grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-rows:repeat(3, 2fr);
+    gap:10px;
+    grid-template-areas: 
+    "uno uno dos dos "
+    "squ squ subb subb"
+    "squ squ subb subb";
+       
+    
+}
+    
+.grid-item3:nth-child(1){
+    background-color: #ffc6c4;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item3:nth-child(2){
+    background-color:#b2d8d8;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item3:nth-child(3){
+    background-color: #c7e5c5;
+    padding: 10px;
+    /* margin: 10px; */
+}
+
+#uno{
+    grid-area: uno;
+}
+
+#dos{
+    grid-area: dos;
+}
+
+#escu{
+    grid-area: squ;
+}
+
+
+.grid-container4{
+    grid-area: subb;
+    background-color:rgb(235, 164, 229) ;
+    display:grid;
+    grid-template-columns: 2 ;
+    grid-template-rows:2;
+    gap:10px;
+    
+    grid-template-areas: 
+    "header header "
+    ". . ";
+}
+    
+.grid-item4:nth-child(1){
+    background-color: #ffc6c4;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item4:nth-child(2){
+    background-color:#b2d8d8;
+    padding: 10px;
+    /* margin: 10px; */
+}
+.grid-item4:nth-child(3){
+    background-color: #c7e5c5;
+    padding: 10px;
+    /* margin: 10px; */
+}
+
+#header{
+    grid-area: header;
+}
+   
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
