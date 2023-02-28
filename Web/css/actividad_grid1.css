@@ -4,18 +4,41 @@
 body, html{
     margin: 0;
     padding: 0;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+h2{
+    color:rgb(255, 115, 0);
+    background-color: #f5e187;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    font-size: 30px;
+    text-transform: uppercase;
+    
+}
+.grid-container, .grid-container1, .grid-container2, .grid-container3, .grid-container4{
+    color: white;
+    text-align: center;
+    font-size: larger;
+    text-decoration:underline dashed 3px;
+   
 }
 
 
 
 .grid-container{
-    padding: 10px;
+    padding: 10px ;
     height: 100vh;
     background-color:rgb(235, 164, 229) ;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows:repeat(2, 1fr);
     gap:10px;
+    border: whitesmoke dashed 3px;
+    
+    
+    
 
     grid-template-areas: 
     ". . ."
@@ -24,7 +47,10 @@ body, html{
 }
 
 .grid-item{
-    padding: 10px;
+    padding: 10px ;
+    border-radius: 25px;
+    border: whitesmoke double 15px;
+
     /* margin: 10px; */
 }
 
@@ -60,17 +86,6 @@ body, html{
 }
 
 
-
-*{
-    box-sizing: border-box;
-}
-body, html{
-    margin: 0;
-    padding: 0;
-}
-
-
-
 .grid-container1{
     padding: 10px;
     height: 100vh;
@@ -79,6 +94,7 @@ body, html{
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows:repeat(3, 1fr);
     gap:10px;
+    border: whitesmoke dashed 3px;
 
     grid-template-areas: 
     "header header header header"
@@ -87,7 +103,13 @@ body, html{
     ;
 
 }
+.grid-item1{
+    padding: 10px ;
+    border-radius: 25px;
+    border: whitesmoke double 15px;
 
+    /* margin: 10px; */
+}
 .grid-item1:nth-child(1){
     background-color: #ffc6c4;
     padding: 10px;
@@ -132,8 +154,9 @@ body, html{
     background-color:rgb(235, 164, 229) ;
     display:grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows:repeat(9, 1fr);
+    grid-template-rows:repeat(6, 1fr);
     gap:10px;
+    border: whitesmoke dashed 3px;
 
     grid-template-areas: 
     "mit1 mit1 mit1 mit2 mit2 mit2 "
@@ -146,7 +169,13 @@ body, html{
     ;
 
 }
+.grid-item2{
+    padding: 10px ;
+    border-radius: 25px;
+    border: whitesmoke double 15px;
 
+    /* margin: 10px; */
+}
 .grid-item2:nth-child(1){
     background-color: #ffc6c4;
     padding: 10px;
@@ -200,12 +229,20 @@ body, html{
     grid-template-columns: repeat(4, 2fr);
     grid-template-rows:repeat(3, 2fr);
     gap:10px;
+    border: whitesmoke dashed 3px;
     grid-template-areas: 
     "uno uno dos dos "
     "squ squ subb subb"
     "squ squ subb subb";
        
     
+}
+.grid-item3{
+    padding: 10px ;
+    border-radius: 25px;
+    border: whitesmoke double 15px;
+
+    /* margin: 10px; */
 }
     
 .grid-item3:nth-child(1){
@@ -249,19 +286,26 @@ body, html{
     "header header "
     ". . ";
 }
-    
+
+.grid-item4{
+    padding: 10px ;
+    border-radius: 25px;
+    border: whitesmoke double 15px;
+
+    /* margin: 10px; */
+}
 .grid-item4:nth-child(1){
-    background-color: #ffc6c4;
+    background-color: #ffd8b1;
     padding: 10px;
     /* margin: 10px; */
 }
 .grid-item4:nth-child(2){
-    background-color:#b2d8d8;
+    background-color: #fff1b5;
     padding: 10px;
     /* margin: 10px; */
 }
 .grid-item4:nth-child(3){
-    background-color: #c7e5c5;
+    background-color: #d4bfff;
     padding: 10px;
     /* margin: 10px; */
 }
