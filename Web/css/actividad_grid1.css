@@ -91,15 +91,15 @@ h2{
     height: 100vh;
     background-color:rgb(235, 164, 229) ;
     display:grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows:repeat(3, 1fr);
     gap:10px;
     border: whitesmoke dashed 3px;
 
     grid-template-areas: 
-    "header header header header"
-    "squ squ rec rec"
-    "squ squ . ."
+    "header header header"
+    "squ rec rec"
+    "squ . ."
     ;
 
 }
@@ -260,6 +260,11 @@ h2{
     padding: 10px;
     /* margin: 10px; */
 }
+.grid-item3:nth-child(4){
+    background-color: #c7e5c5;
+    padding: 10px;
+    /* margin: 10px; */
+}
 
 #uno{
     grid-area: uno;
@@ -271,6 +276,9 @@ h2{
 
 #escu{
     grid-area: squ;
+}
+#subb{
+    grid-area: subb;
 }
 
 
