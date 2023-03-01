@@ -63,30 +63,30 @@ Tomando en cuenta lo anterior, escriba en álgebra relacional las siguientes con
 
 **1. Apellidos y nombre de los participantes de nacionalidad mexicana.** 
 
-$$ \Pi _{Apellidos, Nombre}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE))$$
+$$\Pi _{Apellidos, Nombre}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE))$$
 
 
  
 **2. Apellidos, nombre y puntos acumulados de los participantes de USA.** 
-$$ \Pi _{Apellidos, Nombre, Puntos}(\sigma Nacionalidad = 'USA' (PARTICIPANTE \bowtie PUNTOSACUMULADOS))$$
+$$\Pi _{Apellidos, Nombre, Puntos}(\sigma Nacionalidad = 'USA' (PARTICIPANTE \bowtie PUNTOSACUMULADOS))$$
  
 **3. Apellidos y nombre de los participantes que se clasificaron en primer lugar en al menos una 
 competencia.**
-$$ \Pi _{Apellidos, Nombre}(\sigma Lugar = 'primer' (CLASIFICACION)) \bowtie PARTICIPANTE$$
+$$\Pi _{Apellidos, Nombre}(\sigma Lugar = 'primer' (CLASIFICACION)) \bowtie PARTICIPANTE$$
  
 **4. Nombre de las competencias en las que intervinieron los participantes mexicanos.** 
-$$ \Pi _{NombreCompetencia}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE)\bowtie CLASIFICACION \bowtie COMPETENCIA)$$
+$$\Pi _{NombreCompetencia}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE)\bowtie CLASIFICACION \bowtie COMPETENCIA)$$
  
  
 **5. Apellidos y nombre de los participantes que nunca se clasificaron en primer lugar en alguna 
 competencia.**  
-$$ \Pi _{Apellidos, Nombre}(PARTICIPANTE - \Pi _{Apellidos, Nombre}(\sigma Lugar = 'primer' (CLASIFICACION))) $$
+$$\Pi _{Apellidos, Nombre}(PARTICIPANTE - \Pi _{Apellidos, Nombre}(\sigma Lugar = 'primer' (CLASIFICACION))) $$
  
 **6. Apellidos y nombre de los participantes siempre se clasificaron en alguna competencia.**
 
  
 **7. Nombre de la competencia que aporta el máximo de puntos.** 
-$$ \Pi _{NombreCompetencia}(\sigma NumPtos = max(NumPtos) (COMPETENCIA))$$
+$$\Pi _{NombreCompetencia}(\sigma NumPtos = max(NumPtos) (COMPETENCIA))$$
  
 **8. Países (nacionalidades) que participaron en todas las competencias.** 
 
