@@ -60,9 +60,11 @@ clasificado en el lugar LUGAR.
  
  
 Tomando en cuenta lo anterior, escriba en álgebra relacional las siguientes consultas: 
- 
+
 **1. Apellidos y nombre de los participantes de nacionalidad mexicana.** 
-$ \Pi _{Apellidos, Nombre}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE))$
+
+$$ \Pi _{Apellidos, Nombre}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE))$$
+
 
  
 **2. Apellidos, nombre y puntos acumulados de los participantes de USA.** 
