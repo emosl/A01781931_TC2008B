@@ -72,31 +72,32 @@ $$\Pi _{Apellidos, Nombre, Puntos}(\sigma Nacionalidad = 'USA' (PARTICIPANTE \bo
  
 **3. Apellidos y nombre de los participantes que se clasificaron en primer lugar en al menos una 
 competencia.**
-$$\Pi _{Apellidos, Nombre}(\sigma Lugar = 'primer' (CLASIFICACION)) \bowtie PARTICIPANTE$$
+$$\Pi _{Apellidos, Nombre}(\sigma Lugar = 'primer' (CLASIFICACION\bowtie PARTICIPANTE))$$
  
 **4. Nombre de las competencias en las que intervinieron los participantes mexicanos.** 
-$$\Pi _{NombreCompetencia}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE)\bowtie CLASIFICACION \bowtie COMPETENCIA)$$
+$$\Pi _{NombreCompetencia}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE\bowtie CLASIFICACION \bowtie COMPETENCIA))$$
  
  
 **5. Apellidos y nombre de los participantes que nunca se clasificaron en primer lugar en alguna 
 competencia.**  
 $$R1=\Pi _{Apellidos, Nombre}(PARTICIPANTE) $$
 $$R2=\Pi _{Apellidos, Nombre}(\sigma Lugar=1(PARTICIPANTE \bowtie CLASIFICACION)) $$
+$$R3=R1-R2$$
  
 **6. Apellidos y nombre de los participantes siempre se clasificaron en alguna competencia.**
 
  
 **7. Nombre de la competencia que aporta el máximo de puntos.** 
-$$ R1= \pi _{NumPtos}(COMPETENCIA)$$
-$$ R2= \pi _{NumPtos}(COMPETENCIA)$$
-$$ R3= \rho _{tabla1}(R1)$$
-$$ R4= \rho _{tabla2}(R2)$$
-$$ R5= \rho _{NumPtos/NumPtos2}(R4)$$
-$$ R6= R3 \times R5$$
-$$ R7= \sigma _{NumPtos<NumPtos2}(R6)$$
-$$ R8= \pi _{NumPtos}(R7)$$
-$$ R9= R1-R2$$
-$$ \Pi_{NombreCompetencia(COMPETENCIA \bowtie R9)}$$ 
+$$R1= \Pi _{NumPtos}(COMPETENCIA)$$
+$$R2= \Pi _{NumPtos}(COMPETENCIA)$$
+$$R3= \rho _{tabla1}(R1)$$
+$$R4= \rho _{tabla2}(R2)$$
+$$R5= \rho _{NumPtos/NumPtos2}(R4)$$
+$$R6= R3 \times R5$$
+$$R7= \sigma _{NumPtos<NumPtos2}(R6)$$
+$$R8= \Pi _{NumPtos}(R7)$$
+$$R9= R1-R2$$
+$$\Pi_{NombreCompetencia(COMPETENCIA \bowtie R9)}$$ 
  
 **8. Países (nacionalidades) que participaron en todas las competencias.** 
 
