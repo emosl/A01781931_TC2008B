@@ -80,13 +80,23 @@ $$\Pi _{NombreCompetencia}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE)\bowti
  
 **5. Apellidos y nombre de los participantes que nunca se clasificaron en primer lugar en alguna 
 competencia.**  
-$$\Pi _{Apellidos, Nombre}(PARTICIPANTE - \Pi _{Apellidos, Nombre}(\sigma Lugar = 'primer' (CLASIFICACION))) $$
+$$R1=\Pi _{Apellidos, Nombre}(PARTICIPANTE) $$
+$$R2=\Pi _{Apellidos, Nombre}(\sigma Lugar=1(PARTICIPANTE \bowtie CLASIFICACION)) $$
  
 **6. Apellidos y nombre de los participantes siempre se clasificaron en alguna competencia.**
 
  
 **7. Nombre de la competencia que aporta el máximo de puntos.** 
-$$\Pi _{NombreCompetencia}(\sigma NumPtos = max(NumPtos) (COMPETENCIA))$$
+$$ R1= \pi _{NumPtos}(COMPETENCIA)$$
+$$ R2= \pi _{NumPtos}(COMPETENCIA)$$
+$$ R3= \rho _{tabla1}(R1)$$
+$$ R4= \rho _{tabla2}(R2)$$
+$$ R5= \rho _{NumPtos/NumPtos2}(R4)$$
+$$ R6= R3 \times R5$$
+$$ R7= \sigma _{NumPtos<NumPtos2}(R6)$$
+$$ R8= \pi _{NumPtos}(R7)$$
+$$ R9= R1-R2$$
+$$ \Pi_{NombreCompetencia(COMPETENCIA \bowtie R9)}$$ 
  
 **8. Países (nacionalidades) que participaron en todas las competencias.** 
 
