@@ -94,7 +94,7 @@ $$R3= \rho _{tabla1}(R1)$$
 $$R4= \rho _{tabla2}(R2)$$
 $$R5= \rho _{NumPtos/NumPtos2}(R4)$$
 $$R6= R3 \times R5$$
-$$R7= \sigma _{NumPtos&lt;NumPtos2}(R6)$$
+$$R7= \sigma _{NumPtos\lt NumPtos2}(R6)$$
 $$R9= R1-R2$$
 $$\Pi_{NombreCompetencia(COMPETENCIA \bowtie R9)}$$ 
  
