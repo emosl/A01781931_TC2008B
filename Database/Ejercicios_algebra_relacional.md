@@ -80,10 +80,10 @@ $$\Pi _{NombreCompetencia}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE\bowtie
  
 **5. Apellidos y nombre de los participantes que nunca se clasificaron en primer lugar en alguna 
 competencia.**  
-$$R1=\Pi _{Apellidos, Nombre}(PARTICIPANTE) $$
-$$R2=\Pi _{Apellidos, Nombre}(\sigma Lugar=1(PARTICIPANTE \bowtie CLASIFICACION)) $$
-$$R3=R1-R2$$
- 
+
+ $$R1=\Pi _{Apellidos, Nombre}(PARTICIPANTE)  $$
+ $$R2=\Pi _{Apellidos, Nombre}(\sigma Lugar=1(PARTICIPANTE \bowtie CLASIFICACION))$$
+ $$R3=R1-R2$$
 **6. Apellidos y nombre de los participantes siempre se clasificaron en alguna competencia.**
 
  
