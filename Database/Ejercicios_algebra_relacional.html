@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejercicios_algebra_relacional.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h3 id="tc2005b-construccion-de-software-y-toma-de-desiciones-tc2005b">TC2005B CONSTRUCCION DE SOFTWARE Y TOMA DE DESICIONES (TC2005B)</h3>
+<h1 id="actividad-1">ACTIVIDAD 1</h1>
+<h1 id="emilia-salazar-leipen">Emilia Salazar Leipen</h1>
+<h2 id="torneo-internacional-algebra-relacional">TORNEO INTERNACIONAL: Algebra relacional</h2>
+<div style="text-align: justify">
+Se dispone de una Base de Datos RELACIONAL para un torneo internacional compuesto de diversas 
+competencias. El esquema de la base de datos es el siguiente:  
+<ul>
+<li>COMPETENCIA (NombreCompetencia: STRING, NumPtos: INTEGER, Tipo: STRING)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>NombreCompetencia</th>
+<th>NumPtos</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valor1</td>
+<td>Valor2</td>
+<td>Valor3</td>
+</tr>
+<tr>
+<td>Valor4</td>
+<td>Valor5</td>
+<td>Valor6</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>Una competencia de un cierto TIPO, se identifica por su nombre NOMBRECOMPETENCIA y aporta un cierto
+número de puntos NUMPTOS.</p>
+<ul>
+<li>PARTICIPANTE (  Número: INTEGER,
+Apellidos: STRING, Nombre: STRING, Nacionalidad: STRING)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Número</th>
+<th>Apellidos</th>
+<th>Nombre</th>
+<th>Nacionalidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valor1</td>
+<td>Valor2</td>
+<td>Valor3</td>
+<td>Valor4</td>
+</tr>
+<tr>
+<td>Valor5</td>
+<td>Valor6</td>
+<td>Valor7</td>
+<td>Valor8</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>Una persona que participa en el torneo es identificada por un número de participante NUMERO y se registra con sus
+APELLIDOS, su NOMBRE y su NACIONALIDAD.</p>
+<ul>
+<li>PUNTOSACUMULADOS(Número: INTEGER, Puntos: INTEGER )</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Número</th>
+<th>Puntos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valor1</td>
+<td>Valor2</td>
+</tr>
+<tr>
+<td>Valor3</td>
+<td>Valor4</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>Todo participante identificado por NUMERO acumula un número de puntos PUNTOS durante el torneo.</p>
+<ul>
+<li>CLASIFICACION(NombreCompetencia: STRING, Número: INTEGER, Lugar: INTEGER)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>NombreCompetencia</th>
+<th>Número</th>
+<th>Lugar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valor1</td>
+<td>Valor2</td>
+<td>Valor3</td>
+</tr>
+<tr>
+<td>Valor4</td>
+<td>Valor5</td>
+<td>Valor6</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>Para la competencia de nombre NOMBRECOMPETENCIA, el participante identificado con el número NUMERO fue
+clasificado en el lugar LUGAR.</p>
+<h3 id="operaciones-de-%C3%A1lgebra-relacional">Operaciones de álgebra relacional:</h3>
+<p>$\Pi$ Proyección</p>
+<p>$\sigma$ Selección</p>
+<p>$\bowtie$ Producto cartesiano</p>
+<p>$\rho$ Renombramiento</p>
+<p>$\times$ Producto cartesiano natural</p>
+<p>$\div$ División</p>
+<p>$-$ Diferencia</p>
+<p>$+$ Unión</p>
+<p>$\cap$ Intersección</p>
+<p>$\cup$ Unión</p>
+<p>Tomando en cuenta lo anterior, escriba en álgebra relacional las siguientes consultas:</p>
+<p><strong>1. Apellidos y nombre de los participantes de nacionalidad mexicana.</strong></p>
+<p>Para obtener los apellidos y nombre de los participantes de nacionalidad mexicana, se debe seleccionar los participantes que tengan nacionalidad mexicana, y luego proyectar los apellidos y nombre de los participantes.</p>
+<p>$$\Pi _{Apellidos, Nombre}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE))$$</p>
+<p><strong>2. Apellidos, nombre y puntos acumulados de los participantes de USA.</strong></p>
+<p>Para obtener los apellidos, nombre y puntos acumulados de los participantes de USA, se debe seleccionar los participantes que tengan nacionalidad USA, y luego proyectar los apellidos, nombre y puntos acumulados de los participantes.
+$$\Pi _{Apellidos, Nombre, Puntos}(\sigma Nacionalidad = 'USA' (PARTICIPANTE \bowtie PUNTOSACUMULADOS))$$</p>
+<p><strong>3. Apellidos y nombre de los participantes que se clasificaron en primer lugar en al menos una
+competencia.</strong></p>
+<p>Para obtener los apellidos y nombre de los participantes que se clasificaron en primer lugar en al menos una competencia, se debe seleccionar los participantes que se clasificaron en primer lugar en al menos una competencia, y luego proyectar los apellidos y nombre de los participantes. Para hacer esto se debe hacer una unión de los participantes con las clasificaciones.
+$$\Pi _{Apellidos, Nombre}(\sigma Lugar = 'primer' (CLASIFICACION\bowtie PARTICIPANTE))$$</p>
+<p><strong>4. Nombre de las competencias en las que intervinieron los participantes mexicanos.</strong></p>
+<p>Para obtener el nombre de las competencias en las que intervinieron los participantes mexicanos, se debe seleccionar los participantes mexicanos, y luego proyectar el nombre de las competencias en las que intervinieron los participantes mexicanos. Para hacer esto se debe hacer una unión de los participantes mexicanos con las clasificaciones, y luego con las competencias.
+$$\Pi _{NombreCompetencia}(\sigma Nacionalidad = 'mexicana' (PARTICIPANTE\bowtie CLASIFICACION \bowtie COMPETENCIA))$$</p>
+<p><strong>5. Apellidos y nombre de los participantes que nunca se clasificaron en primer lugar en alguna
+competencia.</strong><br>
+Para obtener los apellidos y nombre de los participantes que nunca se clasificaron en primer lugar en alguna competencia, se debe seleccionar los participantes que nunca se clasificaron en primer lugar en alguna competencia, y luego proyectar los apellidos y nombre de los participantes. Para hacer esto se debe hacer una diferencia de los participantes con los participantes que se clasificaron en primer lugar en alguna competencia.</p>
+<p>$$R1=\Pi _{Apellidos, Nombre}(PARTICIPANTE)  $$
+$$R2=\Pi _{Apellidos, Nombre}(\sigma Lugar=1(PARTICIPANTE \bowtie CLASIFICACION))$$
+$$R3=R1-R2$$</p>
+<p><strong>6. Apellidos y nombre de los participantes siempre se clasificaron en alguna competencia.</strong>
+Para obtener los apellidos y nombre de los participantes siempre se clasificaron en alguna competencia, se debe seleccionar los participantes que siempre se clasificaron en alguna competencia, y luego proyectar los apellidos y nombre de los participantes. Para hacer esto se debe hacer una división de los participantes con las clasificaciones ya que la división define una relación sobre los atributos C que consiste en el conjunto de tuplas de A que coinciden con la combinación de cada tupla en B. Por esto mismo, al dividir PARTICIPANTE entre CLASIFICACION obtenemos como resultado los participantes que siempre se clasificaron en alguna competencia.</p>
+<p>$$\Pi _{Nombre, Apellido, Numero}(PARTICIPANTE) \div \Pi _{Numero}(CLASIFICACION)$$</p>
+<p><strong>7. Nombre de la competencia que aporta el máximo de puntos.</strong>
+Para obtener el nombre de la competencia que aporta el máximo numero de puntos debemos primero crear dos copias de la columna de Numero de Puntos de la tabla competencia, posteriormente renombramos una de las tablas y sacamos el producto cartesiano. Finalmente seleccionamos el valor menor de nuestro producto cartesiano y proyectamos los puntos. Finalmente hacemos una diferencia de R! con R8 y lo unimos con la tabla competencia, proyectando el nombre de la competencia con el mayor numero de puntos.
+$$R1= \Pi _{NumPtos}(COMPETENCIA)$$
+$$R2= \Pi _{NumPtos}(COMPETENCIA)$$
+$$R3= \rho _{tabla1}(R1)$$
+$$R4= \rho _{tabla2}(R2)$$
+$$R5= \rho _{NumPtos/NumPtos2}(R4)$$
+$$R6= R3 \times R5$$
+$$R7=\sigma _{NumPtos\lt NumPtos2}(R6)$$
+$$R8=\Pi _{NumPtos}(R7)$$
+$$R9=R1-R8$$
+$$\Pi _{NombreCompetencia(COMPETENCIA \bowtie R9)}$$</p>
+<p><strong>8. Países (nacionalidades) que participaron en todas las competencias.</strong>
+Como mencionamos anteriormente la división define una relación sobre los atributos C que consiste en el conjunto de tuplas de A que coinciden con la combinación de cada tupla en B. Por esto mismo al hacer una unión entre clasificación y participante y dividirlo entre competencia obtenemos las nacionalidades que participaron en todas las competencias.</p>
+<p>$$\Pi _{Nacionalidad, NombreCompetencia}(PARTICIPANTE \bowtie CLASIFICACION) \div \Pi _{NombreCompetencia}(COMPETENCIA)$$</p>
+
+</body>
+</html>
