@@ -114,7 +114,9 @@ competencia.**
 - Para obtener los apellidos y nombre de los participantes que nunca se clasificaron en primer lugar en alguna competencia, se debe seleccionar los participantes que nunca se clasificaron en primer lugar en alguna competencia, y luego proyectar los apellidos y nombre de los participantes. Para hacer esto se debe hacer una diferencia de los participantes con los participantes que se clasificaron en primer lugar en alguna competencia.
 
  $$R1=\Pi _{Apellidos, Nombre}(PARTICIPANTE)  $$
+
  $$R2=\Pi _{Apellidos, Nombre}(\sigma Lugar=1(PARTICIPANTE \bowtie CLASIFICACION))$$
+
  $$R3=R1-R2$$
 
 **6. Apellidos y nombre de los participantes siempre se clasificaron en alguna competencia.**
@@ -125,14 +127,23 @@ $$\Pi _{Nombre, Apellido, Numero}(PARTICIPANTE) \div \Pi _{Numero}(CLASIFICACION
 **7. Nombre de la competencia que aporta el máximo de puntos.** 
 - Para obtener el nombre de la competencia que aporta el máximo numero de puntos debemos primero crear dos copias de la columna de Numero de Puntos de la tabla competencia, posteriormente renombramos una de las tablas y sacamos el producto cartesiano. Finalmente seleccionamos el valor menor de nuestro producto cartesiano y proyectamos los puntos. Finalmente hacemos una diferencia de R! con R8 y lo unimos con la tabla competencia, proyectando el nombre de la competencia con el mayor numero de puntos.
 $$R1= \Pi _{NumPtos}(COMPETENCIA)$$
+
 $$R2= \Pi _{NumPtos}(COMPETENCIA)$$
+
 $$R3= \rho _{tabla1}(R1)$$
+
 $$R4= \rho _{tabla2}(R2)$$
+
 $$R5= \rho _{NumPtos/NumPtos2}(R4)$$
+
 $$R6= R3 \times R5$$
+
 $$R7=\sigma _{NumPtos\lt NumPtos2}(R6)$$
+
 $$R8=\Pi _{NumPtos}(R7)$$
+
 $$R9=R1-R8$$
+
 $$\Pi _{NombreCompetencia(COMPETENCIA \bowtie R9)}$$
 
  
